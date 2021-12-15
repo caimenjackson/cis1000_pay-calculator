@@ -16,6 +16,24 @@ def national_insurance_deductions(currentsalary):
         deduction = deductionOne + deductionTwo
     return deduction
 
+    def studentfinancecalculator(currentincome):
+        print ("Please select your payback plan \n 1) Plan 1 \n 2) Plan 2 \n 3) Plan 4 \n 4) Postgraduate Loan ")
+        planselection = int(input)
+        if planselection == 1:
+            print("placeholder")
+        elif planselection == 2:
+            print("placeholder")
+        elif planselection == 3:
+            print("placeholder")
+        elif planselection == 4:
+            print("placeholder")
+        else:
+            print("Invalid option chosen. Exiting program.")
+            exit
+
+
+
+
 def tax_band_one(currentsalary): #runs if income is below 50,000
     if currentsalary > 50000:
         currentsalary = 50000
@@ -98,7 +116,7 @@ def runtime():
 
     mode = int(input("Please enter run mode \n 1) Standalone take-home pay calculator \n 2) Comparison take-home pay calculator\n"))
     
-    if mode == 1:
+    if mode == 1: #runs the following indented code if the user inputs the value 1 
         salaryA = int(input("Please enter Salary A: £"))
         nicalc = input("Do you want to calculate national insurance deductions? Y/N")
         if nicalc.upper() == "Y":
@@ -110,7 +128,7 @@ def runtime():
             print("The total tax deduction is £" + str(taxdifference))
 
 
-    if mode == 2:
+    elif mode == 2:
         salaryA = int(input("Please enter Salary A: £"))
         salaryB = int(input("Please enter Salary B: £"))
         result = takehomecalculatordompare(salaryA, salaryB)
@@ -119,6 +137,10 @@ def runtime():
         salarydiff = abs(salarydiff)
         print("Difference in salary: £" + str(salarydiff))
 
+
+    else:
+        print("Invalid selection made. Program exiting.")
+        exit
         
 
 ####### Section 1 ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### #######
