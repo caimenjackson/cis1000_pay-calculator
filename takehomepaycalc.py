@@ -102,7 +102,8 @@ def runtime():
         salaryA = int(input("Please enter Salary A: £"))
         nicalc = input("Do you want to calculate national insurance deductions? Y/N")
         if nicalc.upper() == "Y":
-            print("for now")
+            totaltakehome = takehomecalculator(salaryA) - national_insurance_deductions(salaryA)
+            print("Take home pay after tax and NI is £", str(totaltakehome))
         else:
             print("Take-home pay after tax is £" + str(takehomecalculator(salaryA)))
             taxdifference = salaryA - takehomecalculator(salaryA)
