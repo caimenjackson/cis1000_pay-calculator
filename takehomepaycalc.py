@@ -58,6 +58,20 @@ def tax_band_two(currentsalary): #runs if income is between 50,000 and 100,000
     taxpaid = taxbandtwo * 0.4
     return total_band_two
 
+#def tax_band_two(currentsalary):
+#    if currentsalary > 100000:
+#        currentsalary = 100000
+ #   else:
+#        currentsalary = currentsalary
+#        taxbandone = 50000 * 0.8
+ #       taxbandone_tax = 50000 * 0.2
+#        currentsalary = currentsalary - 12500
+ #       taxbandtwo = currentsalary * 0.6 
+ #       taxbandtwo_tax = currentsalary * 0.4
+#        taxbandtwo_takehomepay = taxbandone + 12500 + taxbandtwo
+ #       return taxbandtwo_takehomepay
+
+
 def tax_band_three(currentsalary): #runs if income is between 100,000 and 150,000 
     difference = currentsalary - 100000
     taxfree_reduction = difference / 2
