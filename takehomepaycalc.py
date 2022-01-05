@@ -111,15 +111,15 @@ def takehomecalculatordompare(salaryA, salaryB):
         salaryA_result=tax_band_three(salaryA)
     else:
         salaryA_result=tax_band_four(salaryA)
-
+        
     if salaryB < 50000:
-        salaryB_result = tax_band_one(salaryA)
-    elif salaryA > 50000 and salaryA < 100000:
-        salaryB_result = tax_band_two(salaryA)
-    elif salaryA > 100000 and salaryA < 150000:
-        salaryB_result=tax_band_three(salaryA)
+        salaryB_result = tax_band_one(salaryB)
+    elif salaryB > 50000 and salaryB < 100000:
+        salaryB_result = tax_band_two(salaryB)
+    elif salaryB > 100000 and salaryB < 150000:
+        salaryB_result=tax_band_three(salaryB)
     else:
-        salaryB_result=tax_band_four(salaryA)
+        salaryB_result=tax_band_four(salaryB)
 
     return salaryA_result, salaryB_result
 
