@@ -2,9 +2,9 @@
 
 ####### Section 1 ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### #######
 
-def national_insurance_deductions(currentsalary):
-    if currentsalary < 9569:
-        return 0
+def national_insurance_deductions(currentsalary): #this defines the national insurance deducion calculator and takes the starting salary input
+    if currentsalary < 9569: #checks if salary is within the threshold of no national insurance and if so runs the following code.
+        return 0 #returns 0 as this is the amount of national insurance that will be deducted
     elif currentsalary < 50270:
         newsalary = currentsalary - 9569
         deduction = newsalary * 0.12
@@ -35,17 +35,17 @@ def national_insurance_deductions(currentsalary):
 
 
 def tax_band_one(currentsalary): #runs if income is below 50,000
-    if currentsalary > 50000:
-        currentsalary = 50000
-    else:
-        if currentsalary > 12500:
+    if currentsalary > 50000: #this runs the indented code if the income is greater than 50,000 (used when called from tax_band_two function)
+        currentsalary = 50000 #sets the value of currentsalary to 50,000 to allow it to be calculated correctly
+    else: #runs the following indented code if the value of the salary is less than the threshold of £50000
+        if currentsalary > 12500: #this checks whether the salary is above the tax-free allowance and if so runs the code
             taxbandone = currentsalary - 12500
             taxbandoneremainder = taxbandone * 0.8
             total_band_one = taxbandoneremainder + 12500
             taxpaid = taxbandone * 0.2
             return total_band_one
-        else:
-            return currentsalary
+        else: #this runs if the starting salary is within the tax-free allowance
+            return currentsalary #returns the value of the sarting salary
 
 # def tax_band_two(currentsalary): #runs if income is between 50,000 and 100,000
 #     if currentsalary > 100000:
@@ -59,8 +59,8 @@ def tax_band_one(currentsalary): #runs if income is below 50,000
 #     return total_band_two
 
  """This tax_band_two is an initial code that doesn't work anymore - it should be ignored"""
- 
-def tax_band_two(currentsalary):
+
+def tax_band_two(currentsalary): #runs the following indented code if it fits into tax_band_two 
    if currentsalary > 100000:
        currentsalary = 100000
    else:
@@ -92,15 +92,15 @@ def tax_band_four(currentsalary):
 ####### Section 2 ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### #######
 
 
-def takehomecalculator(currentsalary):
-    if currentsalary < 50000:
-        return(tax_band_one(currentsalary))
-    elif currentsalary > 50000 and currentsalary < 100000:
-        return(tax_band_two(currentsalary))
-    elif currentsalary > 100000 and currentsalary < 150000:
-        return(tax_band_three(currentsalary))
-    else:
-        return(tax_band_four(currentsalary))
+def takehomecalculator(currentsalary): #this defines the function to determine which tax band function to run and passes the starting salary
+    if currentsalary < 50000: #this runs taxbandone and passes the starting salary if the income is less than £50k
+        return(tax_band_one(currentsalary)) #this returns the value of the end salary from the tax_band_one function
+    elif currentsalary > 50000 and currentsalary < 100000: #this runs the taxbandtwo function if the starting salary is between 50,000 and 100,000
+        return(tax_band_two(currentsalary)) #this returns the value of the end salary from the taxbandtwo function
+    elif currentsalary > 100000 and currentsalary < 150000: #this runs the taxbandthree function if the starting salary is between 100,000 and 150,000
+        return(tax_band_three(currentsalary)) #this returns the value of the end salary from the taxbandthree function
+    else: #this runs if the starting salary is higher than £150,000 (all other values)
+        return(tax_band_four(currentsalary)) #this returns the value of the end salary from the taxbandfour function
 
 
 
