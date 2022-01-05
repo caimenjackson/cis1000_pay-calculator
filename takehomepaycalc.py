@@ -103,19 +103,19 @@ def takehomecalculator(currentsalary):
 
 
 def takehomecalculatordompare(salaryA, salaryB):
-    if salaryA < 50000:
-        salaryA_result = tax_band_one(salaryA)
+    if salaryA < 50000: #this runs the indented code if the salary is less than the £50k threshold
+        salaryA_result = tax_band_one(salaryA) 
     elif salaryA > 50000 and salaryA < 100000:
         salaryA_result = tax_band_two(salaryA)
     elif salaryA > 100000 and salaryA < 150000:
         salaryA_result=tax_band_three(salaryA)
     else:
         salaryA_result=tax_band_four(salaryA)
-        
-    if salaryB < 50000:
-        salaryB_result = tax_band_one(salaryB)
-    elif salaryB > 50000 and salaryB < 100000:
-        salaryB_result = tax_band_two(salaryB)
+
+    if salaryB < 50000: #this runs the indented code if the salary is less than the £50k threshold
+        salaryB_result = tax_band_one(salaryB) #passes through the starting salary and runs it in the tax band one function
+    elif salaryB > 50000 and salaryB < 100000: #runs the code if starting salary is in tax band two
+        salaryB_result = tax_band_two(salaryB) #passes through the starting salary and runs it in the tax band two function
     elif salaryB > 100000 and salaryB < 150000:
         salaryB_result=tax_band_three(salaryB)
     else:
@@ -126,39 +126,39 @@ def takehomecalculatordompare(salaryA, salaryB):
 ####### Section 3 ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### #######
 
 
-def runtime():
+def runtime(): #defines a main function which will handle the running of all the other functions in the code
 
     mode = int(input("Please enter run mode \n 1) Standalone take-home pay calculator \n 2) Comparison take-home pay calculator\n"))
     
     if mode == 1: #runs the following indented code if the user inputs the value 1 
         salaryA = int(input("Please enter Salary A: £"))
-        nicalc = input("Do you want to calculate national insurance deductions? Y/N")
-        if nicalc.upper() == "Y":
+        nicalc = input("Do you want to calculate national insurance deductions? Y/N") #allows an input asking if they want a national insurance calculation
+        if nicalc.upper() == "Y": #runs the following code if the user inputs y or Y
             totaltakehome = takehomecalculator(salaryA) - national_insurance_deductions(salaryA)
             print("Take home pay after tax and NI is £", str(totaltakehome))
-        else:
+        else: #runs the following code without national insurance calculations if the input isn't y or Y
             print("Take-home pay after tax is £" + str(takehomecalculator(salaryA)))
-            taxdifference = salaryA - takehomecalculator(salaryA)
+            taxdifference = salaryA - takehomecalculator(salaryA) #works out the difference by taking the final salary away from the starting salary
             print("The total tax deduction is £" + str(taxdifference))
 
 
-    elif mode == 2:
-        salaryA = int(input("Please enter Salary A: £"))
-        salaryB = int(input("Please enter Salary B: £"))
-        result = takehomecalculatordompare(salaryA, salaryB)
-        print("Salary A: " + str(result[0]) + "\nSalary B: " + str(result[1]))
-        salarydiff = result[0] - result[1]
-        salarydiff = abs(salarydiff)
-        print("Difference in salary: £" + str(salarydiff))
+    elif mode == 2: #runs the code if the user inputs a value fo 2
+        salaryA = int(input("Please enter Salary A: £")) #allows an integer input for salary a
+        salaryB = int(input("Please enter Salary B: £")) #allows an integer input for salary b
+        result = takehomecalculatordompare(salaryA, salaryB) #runs the function result and passes through the starting salary inputs
+        print("Salary A: " + str(result[0]) + "\nSalary B: " + str(result[1])) #Returns the salary for A and the salary for B to the user
+        salarydiff = result[0] - result[1] #subtracting one salary from another and saving it under a new variable
+        salarydiff = abs(salarydiff) #this will make the difference variable always positive for the user
+        print("Difference in salary: £" + str(salarydiff)) #prints the value of the salary difference variable and tells the user 
 
 
-    else:
-        print("Invalid selection made. Program exiting.")
-        exit
+    else: #runs the following code if an unexpected input is recieved by the program
+        print("Invalid selection made. Program exiting.") #print a warning to the user that there has been an invalid selection made
+        exit #exits the program by halting the running of the code
         
 
 ####### Section 1 ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### #######
 
 
  
-runtime()
+runtime() #this will run the main function when the program is executed to run the actual calculator
