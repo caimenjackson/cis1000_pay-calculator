@@ -47,32 +47,31 @@ def tax_band_one(currentsalary): #runs if income is below 50,000
         else:
             return currentsalary
 
-def tax_band_two(currentsalary): #runs if income is between 50,000 and 100,000
-    if currentsalary > 100000:
-        currentsalary = 100000
-    else:
-        currentsalary = currentsalary
-    taxbandtwo = currentsalary - 50000
-    taxbandtwocalculation = taxbandtwo * 0.6
-    total_band_two = taxbandtwocalculation + tax_band_one(currentsalary)
-    taxpaid = taxbandtwo * 0.4
-    return total_band_two
+# def tax_band_two(currentsalary): #runs if income is between 50,000 and 100,000
+#     if currentsalary > 100000:
+#         currentsalary = 100000
+#     else:
+#         currentsalary = currentsalary
+#     taxbandtwo = currentsalary - 50000
+#     taxbandtwocalculation = taxbandtwo * 0.6
+#     total_band_two = taxbandtwocalculation + tax_band_one(currentsalary)
+#     taxpaid = taxbandtwo * 0.4
+#     return total_band_two
 
-
- 
  """This tax_band_two is an initial code that doesn't work anymore - it should be ignored"""
-#def tax_band_two(currentsalary):
-#    if currentsalary > 100000:
-#        currentsalary = 100000
- #   else:
-#        currentsalary = currentsalary
-#        taxbandone = 50000 * 0.8
- #       taxbandone_tax = 50000 * 0.2
-#        currentsalary = currentsalary - 12500
- #       taxbandtwo = currentsalary * 0.6 
- #       taxbandtwo_tax = currentsalary * 0.4
-#        taxbandtwo_takehomepay = taxbandone + 12500 + taxbandtwo
- #       return taxbandtwo_takehomepay
+ 
+def tax_band_two(currentsalary):
+   if currentsalary > 100000:
+       currentsalary = 100000
+   else:
+       currentsalary = currentsalary
+       taxbandone = 50000 * 0.8
+       taxbandone_tax = 50000 * 0.2
+       currentsalary = currentsalary - 12500
+       taxbandtwo = currentsalary * 0.6 
+       taxbandtwo_tax = currentsalary * 0.4
+       taxbandtwo_takehomepay = taxbandone + 12500 + taxbandtwo
+       return taxbandtwo_takehomepay
 
 
 def tax_band_three(currentsalary): #runs if income is between 100,000 and 150,000 
