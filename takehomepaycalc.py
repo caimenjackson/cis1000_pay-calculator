@@ -1,4 +1,4 @@
-####### Take Home Pay Calculator ####### CAIMEN JACKSON, ELLA JACKSON ####### ####### ####### ####### ####### #######
+####### Take Home Pay Calculator ####### CAIMEN JACKSON ####### ####### ####### ####### ####### #######
 
 ####### Section 1 ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### ####### #######
 
@@ -16,20 +16,20 @@ def national_insurance_deductions(currentsalary):
         deduction = deductionOne + deductionTwo
     return deduction
 
-    def studentfinancecalculator(currentincome):
-        print ("Please select your payback plan \n 1) Plan 1 \n 2) Plan 2 \n 3) Plan 4 \n 4) Postgraduate Loan ")
-        planselection = int(input)
-        if planselection == 1:
-            print("placeholder")
-        elif planselection == 2:
-            print("placeholder")
-        elif planselection == 3:
-            print("placeholder")
-        elif planselection == 4:
-            print("placeholder")
-        else:
-            print("Invalid option chosen. Exiting program.")
-            exit
+    # def studentfinancecalculator(currentincome):
+    #     print ("Please select your payback plan \n 1) Plan 1 \n 2) Plan 2 \n 3) Plan 4 \n 4) Postgraduate Loan ")
+    #     planselection = int(input)
+    #     if planselection == 1:
+    #         print("placeholder")
+    #     elif planselection == 2:
+    #         print("placeholder")
+    #     elif planselection == 3:
+    #         print("placeholder")
+    #     elif planselection == 4:
+    #         print("placeholder")
+    #     else:
+    #         print("Invalid option chosen. Exiting program.")
+    #         exit
 
 
 
@@ -58,6 +58,9 @@ def tax_band_two(currentsalary): #runs if income is between 50,000 and 100,000
     taxpaid = taxbandtwo * 0.4
     return total_band_two
 
+
+ 
+ """This tax_band_two is an initial code that doesn't work anymore - it should be ignored"""
 #def tax_band_two(currentsalary):
 #    if currentsalary > 100000:
 #        currentsalary = 100000
@@ -73,14 +76,14 @@ def tax_band_two(currentsalary): #runs if income is between 50,000 and 100,000
 
 
 def tax_band_three(currentsalary): #runs if income is between 100,000 and 150,000 
-    difference = currentsalary - 100000
-    taxfree_reduction = difference / 2
-    taxfree = 12500 - taxfree_reduction
-    personal_allowance = 12500 - taxfree_reduction
-    fixed_band_one = 50000 * 0.8
-    dynamic_band_two = (50000 - personal_allowance) * 0.6
-    total_band_three = fixed_band_one + dynamic_band_two + personal_allowance
-    return total_band_three
+    difference = currentsalary - 100000 #this works out the salary that is purely above 100,000
+    taxfree_reduction = difference / 2 #this calculates the 
+    taxfree = 12500 - taxfree_reduction #this works out the tax free allowance by subtracting the allowance from 12500
+    personal_allowance = 12500 - taxfree_reduction #this works out the personal allowance by taking the taxfree reduction from the total and taking it from the initial £12500
+    fixed_band_one = 50000 * 0.8 #this calculates the first step of taxbandthree (taxbandone) by leaving 80% of the overall starting salary
+    dynamic_band_two = (50000 - personal_allowance) * 0.6 #this works out tax band two by subtracting the personal allowance and taking 60% of what is left from the rest of the starting income
+    total_band_three = fixed_band_one + dynamic_band_two + personal_allowance #this works out the total take-home salary by adding together the remainder from taxband; one, two and three.
+    return total_band_three #returns the value of the taxbandthree take-home salary after everything has been calculated.
 
 def tax_band_four(currentsalary):
     total_band_four = currentsalary * 0.55
