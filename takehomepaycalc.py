@@ -108,7 +108,7 @@ def takehomecalculatordompare(salaryA, salaryB):
     elif salaryA > 50000 and salaryA < 100000:
         salaryA_result = tax_band_two(salaryA)
     elif salaryA > 100000 and salaryA < 150000:
-        salaryA_result=tax_band_three(salaryA)
+        salaryA_result=tax_band_three(salaryA) #passes through the starting salary and runs it in the tax badn three function
     else:
         salaryA_result=tax_band_four(salaryA)
 
@@ -117,7 +117,7 @@ def takehomecalculatordompare(salaryA, salaryB):
     elif salaryB > 50000 and salaryB < 100000: #runs the code if starting salary is in tax band two
         salaryB_result = tax_band_two(salaryB) #passes through the starting salary and runs it in the tax band two function
     elif salaryB > 100000 and salaryB < 150000:
-        salaryB_result=tax_band_three(salaryB)
+        salaryB_result=tax_band_three(salaryB) #passes through the starting salary and runs it in the tax badn three function
     else:
         salaryB_result=tax_band_four(salaryB)
 
